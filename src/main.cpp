@@ -1,3 +1,4 @@
+#include <Arduino.h>
 #include <avr/sleep.h>    // Sleep Modes
 #include <avr/power.h>    // Power management
 #include <avr/wdt.h>      // Watchdog timer
@@ -22,6 +23,7 @@ TinySoftwareSerial mySerial(buf,RX_PIN,TX_PIN); //RX, TX
 //#define PLAY_STATUS 4
 
 #define watchdogRegister WDTCR
+
 
 ISR (WDT_vect) 
 {
