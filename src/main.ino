@@ -4,9 +4,11 @@
 
 soft_ring_buffer* buf;
 
-const int rx=4;
-const int tx=5;
-TinySoftwareSerial mySerial(buf,rx,tx); //RX, TX
+// const int RX_PIN=4;
+// const int TX_PIN=5;
+#define RX_PIN 4
+#define TX_PIN 5
+TinySoftwareSerial mySerial(buf,RX_PIN,TX_PIN); //RX, TX
 
 // connected to pin 12 (ADKey1) of DFPLayer (pulling it LOW starts playing)
 #define PLAY_PIN 0
@@ -28,8 +30,8 @@ ISR (WDT_vect)
 
 
 void setup() {
-    pinMode(rx,INPUT);
-    pinMode(tx,OUTPUT);
+    pinMode(RX_PIN,INPUT);
+    pinMode(TX_PIN,OUTPUT);
     mySerial.begin(9600);
     Serial.println(F("Setup started"));
     wdt_reset();  

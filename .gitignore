@@ -3,3 +3,6 @@ include/
 lib/
 test/
 .travis.yml
+.vscode/c_cpp_properties.json
+.vscode/extensions.json
+.vscode/launch.json
